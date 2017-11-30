@@ -1,20 +1,25 @@
 from random import choice
 print("Welcome to Word Jumble")
 group = [
-    ["I", "z", "a", "k", "a", "y", "a"],
-    ["J", "a", "p", "a", "n", "e", "s", "e"],
-    ["S", "u", "s", "h", "i"],
-    ["K", "y", "o", "t", "o"],
-    ["O", "s", "a", "k", "a"],
-    ["F", "o", "r", "e", "i", "g", "n", "f", "r", "i", "e", "n", "d", "s"]
+    "Izakaya",
+    "Japanese",
+    "Sushi",
+    "Kyoto",
+    "Osaka",
+    "Foreign friends"
 ]
 words = choice(group)
+jumble = []
 guess =[]
 
 for i in range(len(words)):
-    word = choice(words)
-    words.remove(word)
-    guess.append(word)
+    word = words[i]
+    jumble.append(word)
+
+for j in range(len(jumble)):
+    word_x = choice(jumble)
+    jumble.remove(word_x)
+    guess.append(word_x)
 print("Your word: ", guess)
 
 loop = True
