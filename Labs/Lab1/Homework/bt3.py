@@ -27,6 +27,6 @@ labels = ['Events', 'Advertisements', ' Word of mouth']
 colors = ['red', 'blue', 'yellow']
 data = [group_events, group_ads, group_wom]
 
-pyplot.pie(data, labels = labels, colors = colors, shadow = True, startangle = 90)
+pyplot.pie(data, labels = labels, colors = colors, shadow = True, startangle = 90, autopct='%1.1f%%')#autopct = show percents
 pyplot.axis('equal')
 pyplot.show()
