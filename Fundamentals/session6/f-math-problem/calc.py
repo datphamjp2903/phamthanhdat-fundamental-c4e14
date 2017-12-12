@@ -12,7 +12,7 @@ def eval(x, y, op): # evaluate
         result = x * y
     else:
         result = x / y
-    return result #cho phep dng dc bien trong def
+    return result #cho phep dung dc bien trong def
 
 # x = randint(0, 10)
 # y = randint(1, 10)
