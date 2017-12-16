@@ -8,7 +8,7 @@ def index():
 
 @app.route('/bmiwithoutrender/<weight>/<height>')
 def bmiwithoutrender(weight, height):
-    w = int(weight)
+    w = float(weight)
     h = float(height)
     bmi = w/(h**2)
     if bmi < 16:
@@ -25,7 +25,7 @@ def bmiwithoutrender(weight, height):
 
 @app.route('/bmiwithrender/<weight>/<height>')
 def bmiwithrender(weight, height):
-    w = int(weight)
+    w = float(weight)
     h = float(height)
     bmi = w/(h**2)
     return render_template('bmi.html', w = w, h = h, bmi = bmi)
