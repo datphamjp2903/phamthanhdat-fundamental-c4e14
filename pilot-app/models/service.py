@@ -7,3 +7,6 @@ class Service(Document):
     height = IntField() # cm
     phone = StringField()
     occupied = BooleanField()
+
+    def __str__(self): #dai dien cho object goi ra function nay
+        return self.name + " " + str(self.height)
