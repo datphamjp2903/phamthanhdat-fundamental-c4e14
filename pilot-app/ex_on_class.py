@@ -3,7 +3,7 @@ from models.service import Service
 
 mlab_connect()
 
-female = Service.objects(gender = 0, height__gte = 160, occupied = False)
+female = Service.objects(gender = 0, height__gte = 160, occupied = True)
 for girl in female:
     print(girl)
 
@@ -13,6 +13,6 @@ if female is None:
     print("Not found")
 else:
     for girl in female:
-        girl.update(set__occupied = True)
+        girl.update(set__occupied = False)
         girl.reload()
         print(girl, girl.occupied)
