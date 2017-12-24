@@ -75,11 +75,10 @@ def edit_service(service_id):
                         set__yob = yob,
                         set__height= height,
                         set__gender = gender,
-                        set__occupied = bool(status))
+                        set__occupied = status == '1')
             service.reload()
 
-            flash("Submitted!")
-            return render_template('edit_service.html', service = service)
+            return redirect(url_for('admin'))
 
 if __name__ == '__main__':
   app.run(debug=True)

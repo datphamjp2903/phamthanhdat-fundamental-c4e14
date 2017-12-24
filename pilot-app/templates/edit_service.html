@@ -33,8 +33,8 @@
       <br>
 
       <label for="">Status</label>
-      <input type="radio" name="occupied" value="True" {% if service.occupied == True %} checked {% endif %}>Busy
-      <input type="radio" name="occupied" value="False" {% if service.occupied == False %} checked {% endif %}>Free
+      <input type="radio" name="occupied" value=1 {% if service.occupied == True %} checked {% endif %}>Busy
+      <input type="radio" name="occupied" value=0 {% if service.occupied == False %} checked {% endif %}>Free
 
       <br>
 
