@@ -1,9 +1,10 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import *
 from models.service import Service
 
 from mlab import mlab_connect
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "jwektjwal;kgja;lksgj"
 #1. Connect
 mlab_connect()
 
@@ -29,6 +30,36 @@ def delete(service_id):
     else:
         service.delete()
         return redirect(url_for('admin'))
+
+@app.route('/new_service', methods = ['GET', 'POST'])
+def new_service():
+    if request.method == "GET":
+        return render_template('new_service.html')
+    elif request.method == "POST":
+        form = request.form
+        name = form['name']
+        phone = form['phone']
+        yob = form['yob']
+        gender = form['gender']
+        height = form['height']
+
+        new_service = Service(name = name,
+                            phone = phone,
+                            yob = yob,
+                            height= height,
+                            gender = gender,
+                            occupied = False)
+        new_service.save()
+        flash("Submitted!")
+        return redirect(url_for('new_service'))
+
+@app.route('/edit/<service_id>')
+def edit_service(service_id):
+    service = Service.objects().with_id(service_id)
+    if service is None:
+        return "Not found"
+    else:
+        return render_template('edit_service.html', service = service)
 
 if __name__ == '__main__':
   app.run(debug=True)

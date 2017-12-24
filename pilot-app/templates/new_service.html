@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" method="post">
+      <label for="">Name</label>
+      <input type="text" name="name" value="">
+
+      <br>
+
+      <label for="">Yob</label>
+      <input type="text" name="yob" value="">
+
+      <br>
+
+      <label for="">Gender</label>
+      <input type="radio" name="gender" value="1">Male
+      <input type="radio" name="gender" value="0">Female
+
+      <br>
+
+      <label for="">Height</label>
+      <input type="number" name="height" value="">cm
+
+      <br>
+
+      <label for="">Phone number</label>
+      <input type="text" name="phone" value="">
+
+      <br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    {% for message in get_flashed_messages() %}
+      <p>{{ message }}</p>
+    {% endfor %}
+
+  </body>
+</html>
