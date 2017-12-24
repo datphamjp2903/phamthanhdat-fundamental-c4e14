@@ -32,6 +32,12 @@
 
       <br>
 
+      <label for="">Status</label>
+      <input type="radio" name="occupied" value="True" {% if service.occupied == True %} checked {% endif %}>Busy
+      <input type="radio" name="occupied" value="False" {% if service.occupied == False %} checked {% endif %}>Free
+
+      <br>
+
       <input type="submit" value="Submit">
     </form>
   </body>

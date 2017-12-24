@@ -37,7 +37,7 @@
             {% endif %}
           </td>
           <td>
-            <a href="#">Fix</a>
+            <a href="{{ url_for('edit_service', service_id = service.id) }}">Fix</a>
             <a href="{{ url_for('delete', service_id = service.id) }}">Delete</a>
           </td>
         </tr>

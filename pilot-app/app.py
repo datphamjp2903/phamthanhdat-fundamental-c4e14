@@ -53,13 +53,32 @@ def new_service():
         flash("Submitted!")
         return redirect(url_for('new_service'))
 
-@app.route('/edit/<service_id>')
+@app.route('/edit/<service_id>', methods = ['GET', 'POST'])
 def edit_service(service_id):
     service = Service.objects().with_id(service_id)
     if service is None:
         return "Not found"
     else:
-        return render_template('edit_service.html', service = service)
+        if request.method == "GET":
+            return render_template('edit_service.html')
+        elif request.method == "POST":
+            form = request.form
+            name = form['name']
+            phone = form['phone']
+            yob = form['yob']
+            gender = form['gender']
+            height = form['height']
+            status = form['occupied']
+
+            service.update(set__name = name,
+                        set__phone = phone,
+                        set__yob = yob,
+                        set__height= height,
+                        set__gender = gender,
+                        set__occupied = status)
+
+            flash("Submitted!")
+            return render_template('edit_service.html', service = service)
 
 if __name__ == '__main__':
   app.run(debug=True)
