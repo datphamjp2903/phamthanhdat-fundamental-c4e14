@@ -60,7 +60,7 @@ def edit_service(service_id):
         return "Not found"
     else:
         if request.method == "GET":
-            return render_template('edit_service.html')
+            return render_template('edit_service.html', service = service)
         elif request.method == "POST":
             form = request.form
             name = form['name']
@@ -75,7 +75,8 @@ def edit_service(service_id):
                         set__yob = yob,
                         set__height= height,
                         set__gender = gender,
-                        set__occupied = status)
+                        set__occupied = bool(status))
+            service.reload()
 
             flash("Submitted!")
             return render_template('edit_service.html', service = service)
