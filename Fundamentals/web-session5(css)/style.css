@@ -1,0 +1,176 @@
+/* selector {property : value;} */
+
+/* h1 {
+  color: red;
+} */
+
+/* get selector by id */
+#first-heading {
+  color: blue;
+}
+
+/* get selector by class */
+.text-gray {
+  color: gray;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-underline {
+  text-decoration: underline; /*overline, linethourgh, none*/
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.font-lobster {
+  font-family: 'Lobster', cursive;
+}
+
+.font-italic {
+  font-style: italic; /* oblique, none */
+}
+
+.font-bold {
+  font-weight: bold; /* 100 - 900, bolder */
+}
+
+.font-size-40px {
+  font-size: 40px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-500px {
+  height: 500px;
+}
+
+.bg-gray {
+  background-color: gray;
+}
+
+.bg-image {
+  background-image: url("http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_720/images/live/p0/1p/jv/p01pjvmd.jpg");
+}
+
+.bg-cover {
+  background-size: contain; /* cover */
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-fixed {
+  background-attachment: fixed; /*parallax*/
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.h-200px {
+  height: 200px;
+}
+
+.h-100px {
+  height: 100px;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.bg-lightgreen {
+  background-color: lightgreen;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-block {
+  display: block;
+}
+
+.float-right {
+  float: right;
+}
+
+.border-purple {
+  border: 1px solid purple; /*dot, dashed,...*/
+}
+
+.mt-50px {
+  margin-top: 50px;
+}
+
+.mr-100px {
+  margin-right: 100px;
+}
+
+.mb-100px {
+  margin-bottom: 100px;
+}
+
+#margin-element {
+  margin: 20px 30px 100px 200px; /*top - right - bottom - left*/ /* 1 value: all*/ /* 2 values: top+bottom, left+right */
+}
+
+.w-100px {
+  width: 100px;
+}
+
+.h-100px {
+  height: 100px;
+}
+
+#padding-element {
+  padding: 10px;
+}
+
+.m-10px {
+  margin: 10px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.row-nowrap {
+  /* flex-flow: direction wrap; default: row nowrap */
+  flex-flow: row nowrap;
+}
+
+.justify-content-center {
+  justify-content: center; /* flex-start: left, flex-end: right, space-between, space-around */
+}
+
+.row-wrap {
+  flex-flow: row wrap;
+}
+
+.items-center {
+  align-items: center; /* flex-start, flex-end */
+}
+
+.align-content-center {
+  align-content: center;
+}
