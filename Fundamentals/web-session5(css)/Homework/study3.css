@@ -1,0 +1,31 @@
+.bg-colorpicker1 {
+  background-color: rgb(33, 150, 52);
+}
+
+.h-500px {
+  height: 500px;
+}
+
+.w-500px {
+  width: 500px;
+}
+
+.bg-colorpicker2 {
+  background-color: #db0b43;
+}
+
+.h-250px {
+  height: 250px;
+}
+
+.w-250px {
+  width: 250px;
+}
+
+#padding-element {
+  padding: 100px;
+}
+
+.box-sizing {
+  box-sizing: border-box;
+}
