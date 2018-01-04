@@ -1,0 +1,42 @@
+.font-lobster {
+  font-family: 'Lobster', cursive;
+}
+
+.mb-300px {
+  margin-bottom: 300px;
+}
+
+.bg-female {
+  background-image: url('image/btn-girl.jpg')
+}
+
+.bg-male {
+  background-image: url('image/btn-man.jpg')
+}
+
+.h-200px {
+  height: 200px !important;
+}
+
+.bg-cover {
+  background-size: cover
+}
+
+.bg-night {
+  background-image: url(image/night.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  /* giu nguyen ti le anh */
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.w-200px {
+  width: 200px;
+}
