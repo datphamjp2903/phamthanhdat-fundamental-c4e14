@@ -40,3 +40,15 @@
 .w-200px {
   width: 200px;
 }
+
+.bg-card1 {
+  background-color: rgb(175, 176, 177);
+}
+
+.bg-card2 {
+  background-color: rgb(125, 122, 125);
+}
+
+.bg-card3 {
+  background-color: rgb(51, 52, 52);
+}
