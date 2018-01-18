@@ -1,0 +1,50 @@
+.bg-board {
+  background-image: url('../images/board-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+.font-nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+.text-40 {
+  font-size: 40px;
+}
+
+.text-16 {
+  font-size: 16px;
+}
+
+.h-75px {
+  height: 75px;
+}
+
+.ml-100 {
+  margin-left: 100px;
+}
+
+.font-sriracha {
+  font-family: 'Sriracha', cursive;
+}
+
+.text-33 {
+  font-size: 33px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+#footer {
+  text-align: center;
+  background-color: rgb(73, 71, 77);
+  color: white;
+  padding: 8px;
+  margin-top: 50px;
+}

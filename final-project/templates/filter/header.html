@@ -1,0 +1,33 @@
+<div class="container mb-5">
+  <div class="w-100 h-75px row align-items-center justify-content-between">
+    <a href="{{ url_for('home') }}" class="text-40 text-light font-nunito ml-5">Easy<b>Education</b></a>
+    <div class="">
+      <a href="{{ url_for('home') }}" class="text-16 text-light font-nunito mx-5">Trang chủ</a>
+      <a href="{{ url_for('home') }}" class="text-16 text-light font-nunito">Về chúng tôi</a>
+    </div>
+  </div>
+
+  <div class="container my-5 ml-100">
+    <h1 class="text-light font-nunito">Hãy theo đuổi <i>đam mê</i> của bạn </h1>
+    <h4 class="text-light font-nunito">Chúng tôi sẽ giúp bạn tìm được điều mình thích</h4>
+  </div>
+
+<form class="filter" method="post">
+  <select class="custom-select col-md-3 mx-3" id="city" name="city">
+    <option value="0">Chọn tỉnh/thành phố</option>
+    <option value="1">Hà Nội</option>
+    <option value="2">tp.Hồ Chí Minh</option>
+    <option value="3">Đà Nẵng</option>
+  </select>
+
+  <select class="custom-select col-md-3 mx-3" id="section" name="section">
+    <option value="0">Chọn lĩnh vực</option>
+    <option value="1">Tiếng Anh</option>
+    <option value="2">Tiếng Nhật</option>
+    <option value="3">Tiếng Pháp</option>
+    <option value="4">Lập trình</option>
+  </select>
+
+  <button class="btn btn-secodary" type="submit" name="button">Lọc</button>
+</form>
+</div>

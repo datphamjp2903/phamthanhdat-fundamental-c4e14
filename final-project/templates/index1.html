@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    {% include 'meta-data.html' %}
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <form method="POST">
+      <div class="form-group">
+        <input name="search" type="text" class="form-control" placeholder="search">
+        <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
+      </div>
+    </form>
+
+    <div class="dropdown py-5">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Chọn tỉnh/thành phố
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" id="dropdownHN" href="#">Hà Nội</a>
+        <a class="dropdown-item" id="dropdownDN" href="#">Đà Nẵng</a>
+        <a class="dropdown-item" id="dropdownHCM" href="#">Thành phố Hồ Chí Minh</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Chọn quận/huyện
+      </button>
+      <div class="dropdown-menu" id="district" aria-labelledby="dropdownMenuButton">
+        <div class="district_list">
+          <a class="dropdown-item hn-district" href="#">Đống Đa</a>
+          <a class="dropdown-item hn-district" href="#">Hoàn Kiếm</a>
+          <a class="dropdown-item hn-district" href="#">Ba Đình</a>
+          <a class="dropdown-item hn-district" href="#">Cầu Giấy</a>
+          <a class="dropdown-item hcm-district" href="#">Quận 1</a>
+          <a class="dropdown-item hcm-district" href="#">Phú N huận</a>
+          <a class="dropdown-item hcm-district" href="#">Tân Bình</a>
+          <a class="dropdown-item dn-district" href="#">Hải Châu</a>
+          <a class="dropdown-item dn-district" href="#">Thanh Khê</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../static/index.js">
+    </script>
+  </body>
+</html>
