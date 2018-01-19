@@ -64,6 +64,45 @@ def new_edu():
         flash("Submitted!")
         return redirect(url_for('admin'))
 
+@app.route('/edit/<edu_id>', methods = ['GET', 'POST'])
+def edit_edu(edu_id):
+    edu = Edu.objects().with_id(edu_id)
+    if edu is None:
+        return "Not found"
+    else:
+        if request.method == "GET":
+            return render_template('edit_edu.html', edu = edu)
+        elif request.method == "POST":
+            form = request.form
+            name = form['name']
+            phone = form['phone']
+            city = form['city']
+            district = form['district']
+            section = form['section']
+            info = form['info']
+            email = form['email']
+            fee = form['fee']
+            photo1 = form['photo1']
+            photo2 = form['photo2']
+            photo3 = form['photo3']
+            website = form['website']
+
+            edu.update(set__name = name,
+                        set__phone = phone,
+                        set__city = city,
+                        set__district = district,
+                        set__section = section,
+                        set__info = info,
+                        set__email = email,
+                        set__fee = fee,
+                        set__photo1 = photo1,
+                        set__photo2 = photo2,
+                        set__photo3 = photo3,
+                        set__website = website)
+            edu.reload()
+
+            return redirect(url_for('admin'))
+
 @app.route('/search/<edu_search>', methods=['GET', 'POST'])
 def search(edu_search):
     if request.method == 'GET':

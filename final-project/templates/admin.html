@@ -44,6 +44,7 @@
           <td>{{edu.district}}</td>
           <td>{{edu.fee}}</td>
           <td>
+            <a href="{{ url_for('edit_edu', edu_id = edu.id) }}">Edit</a>
             <a href="{{ url_for('delete', edu_id = edu.id) }}">Delete</a>
           </td>
 
