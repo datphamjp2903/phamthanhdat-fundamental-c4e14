@@ -16,6 +16,53 @@ mlab_connect()
 def index():
     return redirect(url_for('home'))
 
+@app.route('/admin')
+def admin():
+    return render_template('admin.html', edus = Edu.objects())
+
+@app.route('/delete/<edu_id>')
+def delete(edu_id):
+    edu = Edu.objects().with_id(edu_id)
+    if edu is None:
+        return "Not found"
+    else:
+        edu.delete()
+        return redirect(url_for('admin'))
+
+@app.route('/new_edu', methods = ['GET', 'POST'])
+def new_edu():
+    if request.method == "GET":
+        return render_template('new_edu.html')
+    elif request.method == "POST":
+        form = request.form
+        name = form['name']
+        phone = form['phone']
+        city = form['city']
+        district = form['district']
+        section = form['section']
+        info = form['info']
+        email = form['email']
+        fee = form['fee']
+        photo1 = form['photo1']
+        photo2 = form['photo2']
+        photo3 = form['photo3']
+        website = form['website']
+
+        new_edu = Edu(name = name,
+                            phone = phone,
+                            city = city,
+                            district = district,
+                            section = section,
+                            info = info,
+                            email = email,
+                            fee = fee,
+                            photo1 = photo1,
+                            photo2 = photo2,
+                            photo3 = photo3,
+                            website = website)
+        new_edu.save()
+        flash("Submitted!")
+        return redirect(url_for('admin'))
 
 @app.route('/search/<edu_search>', methods=['GET', 'POST'])
 def search(edu_search):
@@ -38,38 +85,10 @@ def home():
         edu_search = request.form['search']
         return  redirect(url_for('search', edu_search = edu_search))
 
-@app.route('/filter/<city>/<section>', methods=['GET', 'POST'])
-def filter_both(city, section):
-    if request.method == 'GET':
-        edus = Edu.objects(city=city, section=section)
-        return render_template('filter.html', edus=edus)
-    if request.method == 'POST':
-        form = request.form
-        city = form.get("city")
-        section = form.get("section")
-        return redirect(url_for('filter_both', city=city, section=section))
-
-@app.route('/filter/0/<section>', methods=['GET', 'POST'])
-def filter_section(section):
-    if request.method == 'GET':
-        edus = Edu.objects(section=section)
-        return render_template('filter.html', edus=edus)
-    if request.method == 'POST':
-        form = request.form
-        city = form.get("city")
-        section = form.get("section")
-        return redirect(url_for('filter_both', city=city, section=section))
-
-@app.route('/filter/<city>/0', methods=['GET', 'POST'])
-def filter_city(city):
-    if request.method == 'GET':
-        edus = Edu.objects(city=city)
-        return render_template('filter.html', edus=edus)
-    if request.method == 'POST':
-        form = request.form
-        city = form.get("city")
-        section = form.get("section")
-        return redirect(url_for('filter_both', city=city, section=section))
+@app.route('/filter')
+def filter_both():
+    edus = Edu.objects()
+    return render_template('filter.html', edus=edus)
 
 
 if __name__ == "__main__":

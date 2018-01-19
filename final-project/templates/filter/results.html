@@ -1,18 +1,15 @@
 <div class="bg-light pt-4">
   <div class="container my-2">
     <h1 class="text-center text-dark text-weight-bold my-4">KẾT QUẢ TÌM KIẾM</h1>
-    <div class="row justify-content-around align-content-start mt-3">
-        {% if edus | count == 0 %}
-          <h1 class="text-muted">Hãy chọn tỉnh/thành phố và lĩnh vực</h1>
-        {% endif %}
-        {% for edu in edus %}
-        <a class="d-flex flex-column" href="{{ url_for('center') }}">
-
-          <div class="p-2"><img src="http://via.placeholder.com/1000x1000" width="200" height="200" alt="img-thumbnail object-fit-cover" class="align-self-center"></div>
-          <div class="p-2 text-center"><p class="d-inline-block text-dark text-center">{{ edu.name }}</p></div>
-
-        </a>
-        {% endfor %}
+    <div class="row justify-content-around align-content-start mt-3" id='all-result'>
+          {% for edu in edus %}
+            <a class="center" style="display:none" href="{{ url_for('center') }}">
+              <td><div class="p-2"><img src="http://via.placeholder.com/1000x1000" width="200" height="200" alt="img-thumbnail object-fit-cover" class="align-self-center"></div></td>
+              <td><div class="p-2 text-center"><p class="d-inline-block text-dark text-center">{{ edu.name }}</p></div></td>
+              <td><p class="d-none">{{ edu.section }}</p></td>
+              <td><p class="d-none">{{ edu.city }}</p></td>
+            </a>
+          {% endfor %}
     </div>
   </div>
 </div>

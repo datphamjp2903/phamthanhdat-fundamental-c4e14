@@ -4,11 +4,32 @@
     <meta charset="utf-8">
     <title></title>
     {% include 'meta-data.html' %}
-
   </head>
   <body class="bg-board">
     {% include 'filter/header.html' %}
     {% include 'filter/results.html' %}
     {% include 'homepages/footer.html' %}
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("button").click(function(event) {
+          var city = $('#city option:selected').val();
+          var section = $('#section option:selected').val();
+          var a = $('a.center');
+
+          console.log(city, section);
+
+          for (i = 0; i < a.length; i++) {
+            var centerSection = a[i].getElementsByTagName('p')[1].textContent;
+            var centerCity = a[i].getElementsByTagName('p')[2].textContent;
+            if (centerSection == section && centerCity == city || section == '0' && centerCity == city || centerSection == section && city == '0') {
+              a.eq(i).show();
+            }  else {
+              a.eq(i).hide();
+          };
+        };
+      });
+    });
+    </script>
   </body>
 </html>

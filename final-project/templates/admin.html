@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+  </head>
+  <body>
+    <h1>Admin</h1>
+    <a href="{{ url_for('new_edu')}}">Add new</a>
+    <table border="1px">
+      <thead>
+        <th>Tên trung tâm</th>
+        <th>Thể loại</th>
+        <th>Thành phố</th>
+        <th>Quận</th>
+        <th>Giá</th>
+        <th>Action</th>
+      </thead>
+
+      <tbody>
+        {% for edu in edus %}
+        <tr>
+          <td>{{edu.name}}</td>
+          <td>
+            {% if edu.section==1 %}
+              Anh
+            {% elif edu.section==2 %}
+              Nhật
+            {% elif edu.section==3 %}
+              Pháp
+            {% else %}
+              Lập trình
+            {% endif %}
+          </td>
+          <td>
+            {% if edu.city==1 %}
+              Hà Nội
+            {% elif edu.city==2 %}
+              Hồ Chí Minh
+            {% else %}
+              Đà Nẵng
+            {% endif %}
+          </td>
+          <td>{{edu.district}}</td>
+          <td>{{edu.fee}}</td>
+          <td>
+            <a href="{{ url_for('delete', edu_id = edu.id) }}">Delete</a>
+          </td>
+
+        </tr>
+        {% endfor %}
+
+      </tbody>
+
+    </table>
+  </body>
+</html>

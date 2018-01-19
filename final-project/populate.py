@@ -6,10 +6,6 @@ from convert import convert
 mlab_connect()
 
 for _ in range(30):
-    center_info = Center(slide = ['http://http://via.placeholder.com/1000x400', 'http://http://via.placeholder.com/1000x400']
-                         icon = ['http://http://via.placeholder.com/200x200', 'http://http://via.placeholder.com/200x200']
-                         course_name = ['Course1', 'Course2'])
-
     edu = Edu(name = 'Trung Tâm {}'.format(_ + 1),
               search_name = 'trung tam {}'.format(_ + 1),
               district = choice(['Quận 1', 'Quận 2', 'Quận 3','Quận A', 'Quận B', 'Quận C']),
@@ -18,5 +14,10 @@ for _ in range(30):
               section = randint(1, 4), #1:anh , 2:nhat, 3:phap, 4:lap trinh
               phone = '01679773969',
               rate = randint(1, 5),
-              courses =)
+              photo1 = '',
+              photo2 = '',
+              photo3 = '',
+              info = '',
+              email = '',
+              website = '')
     edu.save()

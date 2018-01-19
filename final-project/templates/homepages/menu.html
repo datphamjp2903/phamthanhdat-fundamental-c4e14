@@ -1,18 +1,16 @@
 <div class="bg-light my-5">
-  <h3 class="text-center font-sriracha text-33 pt-4 my-5">Bạn cần tìm trung tâm học tập nhưng lại không biết nơi nào tốt và phù hợp?
+  <h3 class="text-center font-sriracha text-33 pt-4 my-5">
+    Nhân tri học bất tri tồn
   <br>
-  Hãy để EasyEducation giúp bạn!</h3>
+    Trẻ con không học, lớn lên không ra hồn
+  </h3>
+  <h3 class="text-center font-sriracha text-33 pb-3">Nhưng muốn học mà không biết học ở đâu thì phải làm gì?</h3>
   <div class="row justify-content-center pb-5">
     <div class="btn-group dropright">
-    <button type="button" class="btn btn-dark btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="sr-only">Toggle Dropright</span> Chọn Lĩnh Vực Bạn Muốn Học
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="{{ url_for('filter_section', section=1) }}">Tiếng Anh</a>
-        <a class="dropdown-item" href="{{ url_for('filter_section', section=2) }}">Tiếng Nhật</a>
-        <a class="dropdown-item" href="{{ url_for('filter_section', section=3) }}">Tiếng Pháp</a>
-        <a class="dropdown-item" href="{{ url_for('filter_section', section=4) }}">Lập Trình</a>
-      </div>
+    <a href="{{ url_for('filter_both') }}">
+      <button type="button" class="btn btn-dark btn-lg dropdown-toggle">
+          Chọn Lĩnh Vực Bạn Muốn Học
+      </button></a>
     </div>
   </div>
 </div>

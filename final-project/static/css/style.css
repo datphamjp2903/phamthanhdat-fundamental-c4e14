@@ -13,6 +13,14 @@
   font-size: 40px;
 }
 
+.text-33 {
+  font-size: 33px;
+}
+
+.text-60 {
+  font-size: 60px;
+}
+
 .text-16 {
   font-size: 16px;
 }
@@ -29,16 +37,13 @@
   font-family: 'Sriracha', cursive;
 }
 
-.text-33 {
-  font-size: 33px;
-}
 
 .italic {
   font-style: italic;
 }
 
-.underline {
-  text-decoration: underline;
+.no-underline {
+  text-decoration: none;
 }
 
 #footer {
