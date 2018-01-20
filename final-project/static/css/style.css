@@ -29,8 +29,12 @@
   height: 75px;
 }
 
-.ml-100 {
-  margin-left: 100px;
+.h-550px {
+  height: 550px;
+}
+
+.ml-220 {
+  margin-left: 220px;
 }
 
 .font-sriracha {
@@ -44,6 +48,13 @@
 
 .no-underline {
   text-decoration: none;
+}
+
+.btn-des {
+  color: none;
+  background-color: transparent;
+  background-image: none;
+  border: none;
 }
 
 #footer {

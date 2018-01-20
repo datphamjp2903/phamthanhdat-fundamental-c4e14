@@ -7,17 +7,23 @@
   </head>
   <body class="bg-board">
     {% include 'filter/header.html' %}
+    {% include 'filter/top.html' %}
     {% include 'filter/results.html' %}
     {% include 'homepages/footer.html' %}
 
     <script type="text/javascript">
       $(document).ready(function() {
+        var resultCenter = $('#result-center')
+        var topCenter = $('#top-center')
+
+        resultCenter.hide()
         $("button").click(function(event) {
           var city = $('#city option:selected').val();
           var section = $('#section option:selected').val();
           var a = $('a.center');
-
-          console.log(city, section);
+          
+          resultCenter.show()
+          topCenter.hide()
 
           for (i = 0; i < a.length; i++) {
             var centerSection = a[i].getElementsByTagName('p')[1].textContent;

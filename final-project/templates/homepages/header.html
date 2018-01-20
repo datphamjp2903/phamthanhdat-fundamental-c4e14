@@ -1,21 +1,25 @@
-<div class="container mb-5">
-  <div class="w-100 h-75px row align-items-center justify-content-between">
-    <a href="{{ url_for('home') }}" class="text-40 text-light font-nunito ml-5">Easy<b>Education</b></a>
+<div class="container mb-5 px-5">
+  <div class="w-100 h-75px row align-items-center justify-content-around">
+    <a href="{{ url_for('home') }}" class="text-40 font-nunito"><button type="button" class="btn-des text-light">Easy<b>Education</b></button></a>
     <div class="">
       <a href="{{ url_for('home') }}" class="text-16 text-light font-nunito mx-5">Trang chủ</a>
       <a href="#about-us" class="text-16 text-light font-nunito">Về chúng tôi</a>
     </div>
   </div>
 
-  <div class="container my-5 ml-100">
-    <h1 class="text-light font-nunito">Hãy theo đuổi <i>đam mê</i> của bạn </h1>
-    <h4 class="text-light font-nunito">Chúng tôi sẽ giúp bạn tìm được điều mình thích</h4>
+  <div class="container row justify-content-center">
+    <div class="my-5 col-7">
+      <h1 class="text-light font-nunito">Hãy theo đuổi <i>đam mê</i> của bạn </h1>
+      <h4 class="text-light font-nunito">Chúng tôi sẽ giúp bạn tìm được điều mình thích</h4>
+    </div>
   </div>
 
-  <div class="container ml-100">
-      <form class="form-inline" method="POST">
-        <input class="form-control mr-sm-2" name="search" type="text" placeholder="Tìm kiếm" aria-label="Search">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Tìm kiếm</button>
-      </form>
+  <div class="container row justify-content-center">
+    <div class="col-7">
+        <form class="form-inline" method="POST">
+          <input class="form-control mr-sm-2" name="search" type="text" placeholder="Tìm kiếm" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Tìm kiếm</button>
+        </form>
+    </div>
   </div>
 </div>

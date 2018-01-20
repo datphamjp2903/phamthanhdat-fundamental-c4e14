@@ -18,7 +18,10 @@ def index():
 
 @app.route('/admin')
 def admin():
-    return render_template('admin.html', edus = Edu.objects())
+    if 'logged_in' in session and session['logged_in'] == True:
+        return render_template('admin.html', edus = Edu.objects())
+    else:
+        return redirect(url_for('admin_login'))
 
 @app.route('/delete/<edu_id>')
 def delete(edu_id):
@@ -43,6 +46,7 @@ def new_edu():
         info = form['info']
         email = form['email']
         fee = form['fee']
+        logo = form['logo']
         photo1 = form['photo1']
         photo2 = form['photo2']
         photo3 = form['photo3']
@@ -56,6 +60,7 @@ def new_edu():
                             info = info,
                             email = email,
                             fee = fee,
+                            logo = logo,
                             photo1 = photo1,
                             photo2 = photo2,
                             photo3 = photo3,
@@ -82,6 +87,7 @@ def edit_edu(edu_id):
             info = form['info']
             email = form['email']
             fee = form['fee']
+            logo = form['logo']
             photo1 = form['photo1']
             photo2 = form['photo2']
             photo3 = form['photo3']
@@ -95,6 +101,7 @@ def edit_edu(edu_id):
                         set__info = info,
                         set__email = email,
                         set__fee = fee,
+                        set__logo = logo,
                         set__photo1 = photo1,
                         set__photo2 = photo2,
                         set__photo3 = photo3,
@@ -112,9 +119,10 @@ def search(edu_search):
         edu_search = request.form['search']
         return redirect(url_for('search', edu_search=convert(edu_search).lower()))
 
-@app.route('/center')
-def center():
-    return render_template('center.html')
+@app.route('/center/<edu_id>')
+def center(edu_id):
+    edu = Edu.objects().with_id(edu_id)
+    return render_template('center.html', edu = edu)
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
@@ -129,6 +137,19 @@ def filter_both():
     edus = Edu.objects()
     return render_template('filter.html', edus=edus)
 
+@app.route('/login/admin', methods=['GET', 'POST'])
+def admin_login():
+    if request.method == 'GET':
+        return render_template('admin-login.html')
+    if request.method == 'POST':
+        form = request.form
+        username = form['username']
+        password = form['password']
+        if username == 'admin' and password == 'admin':
+            session['logged_in'] = True
+            return redirect(url_for('admin'))
+        else:
+            return 'NOT FOUND'
 
 if __name__ == "__main__":
   app.run(debug=True)
