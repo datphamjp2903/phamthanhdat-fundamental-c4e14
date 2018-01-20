@@ -15,7 +15,7 @@
       <input type="text" name="logo" value="{{ edu.logo }}">
 
       <br>
-      
+
       <label for="">Phone</label>
       <input type="text" name="phone" value="{{ edu.phone }}">
 
@@ -26,8 +26,10 @@
 
       <br>
 
-      <label for="">City</label>
-      <input type="number" name="city" value="{{ edu.city }}">
+      <label for="">City</label><br>
+      <input type="radio" name="city" value="1" {% if edu.city == 1 %} checked {% endif %}>Hà Nội <br>
+      <input type="radio" name="city" value="2" {% if edu.city == 2 %} checked {% endif %}>Hồ Chí Minh <br>
+      <input type="radio" name="city" value="3" {% if edu.city == 3 %} checked {% endif %}>Đà Nẵng
 
       <br>
 
@@ -36,13 +38,16 @@
 
       <br>
 
-      <label for="">Section</label>
-      <input type="number" name="section" value="{{ edu.section }}">
+      <label for="">Section</label><br>
+      <input type="radio" name="section" value="1" {% if edu.section == 1 %} checked {% endif %}>Anh <br>
+      <input type="radio" name="section" value="2" {% if edu.section == 2 %} checked {% endif %}>Nhật <br>
+      <input type="radio" name="section" value="3" {% if edu.section == 3 %} checked {% endif %}>Pháp <br>
+      <input type="radio" name="section" value="4" {% if edu.section == 4 %} checked {% endif %}>Lập trình
 
       <br>
 
-      <label for="">Info</label>
-      <input type="text" name="info" value="{{ edu.info }}">
+      <label for="">Info</label><br>
+      <textarea name="info" rows="20" cols="80">{{ edu.info }}</textarea>
 
       <br>
 
