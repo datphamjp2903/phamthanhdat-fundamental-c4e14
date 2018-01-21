@@ -3,7 +3,7 @@
     <a href="{{ url_for('home') }}" class="text-40 text-light font-nunito ml-5">Easy<b>Education</b></a>
     <div class="">
       <a href="{{ url_for('home') }}" class="text-16 text-light font-nunito mx-5">Trang chủ</a>
-      <a href="#about-us" class="text-16 text-light font-nunito">Về chúng tôi</a>
+      <a href="{{ url_for('home') }}" class="text-16 text-light font-nunito">Về chúng tôi</a>
     </div>
   </div>
 
@@ -14,7 +14,7 @@
 
   <div class="container ml-100">
       <form class="form-inline" method="POST">
-        <input class="form-control mr-sm-2" name="search" id="search" type="text" placeholder="Tìm kiếm" aria-label="Search">
+        <input class="form-control mr-sm-2" name="search" id="search" type="text" placeholder="Kết quả cho : {{ edu_search }}" aria-label="Search">
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Tìm kiếm</button>
       </form>
   </div>

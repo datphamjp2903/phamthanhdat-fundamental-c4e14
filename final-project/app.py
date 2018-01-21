@@ -114,7 +114,7 @@ def edit_edu(edu_id):
 def search(edu_search):
     if request.method == 'GET':
         edus = Edu.objects(search_name__contains=edu_search)
-        return render_template('search.html', edus=edus)
+        return render_template('search.html', edus=edus, edu_search = edu_search)
     if request.method == 'POST':
         edu_search = request.form['search']
         return redirect(url_for('search', edu_search=convert(edu_search).lower()))

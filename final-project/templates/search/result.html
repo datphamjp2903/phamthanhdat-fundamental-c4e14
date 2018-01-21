@@ -4,7 +4,7 @@
     <div class="row justify-content-around align-content-start mt-3">
         {% if edus | count > 0 %}
           {% for edu in edus %}
-          <a class="d-flex flex-column" href="{{ url_for('center') }}">
+          <a class="d-flex flex-column" href="{{ url_for('center', edu_id = edu.id) }}">
             <div class="p-2"><img src="http://via.placeholder.com/1000x1000" width="200" height="200" alt="img-thumbnail object-fit-cover" class="align-self-center"></div>
             <div class="p-2 text-center"><p class="d-inline-block text-dark text-center">{{ edu.name }}</p></div>
           </a>

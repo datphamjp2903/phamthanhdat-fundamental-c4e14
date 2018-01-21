@@ -52,9 +52,13 @@
 
 .btn-des {
   color: none;
-  background-color: none;
+  background-color: transparent;
   background-image: none;
   border: none;
+}
+
+.logo-border {
+  border: 1.5px solid #ccc
 }
 
 #footer {

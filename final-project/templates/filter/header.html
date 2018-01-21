@@ -3,7 +3,7 @@
     <a href="{{ url_for('home') }}" class="text-40 font-nunito"><button type="button" class="btn-des text-light">Easy<b>Education</b></button></a>
     <div class="">
       <a href="{{ url_for('home') }}" class="text-16 text-light font-nunito mx-5">Trang chủ</a>
-      <a href="#about-us" class="text-16 text-light font-nunito">Về chúng tôi</a>
+      <a href="{{ url_for('home') }}" class="text-16 text-light font-nunito">Về chúng tôi</a>
     </div>
   </div>
 
@@ -14,21 +14,23 @@
     </div>
   </div>
 
-  <select class="custom-select col-md-3 mx-3" id="city" name="city">
-    <option value="0">Chọn tỉnh/thành phố</option>
-    <option value="1">Hà Nội</option>
-    <option value="2">tp.Hồ Chí Minh</option>
-    <option value="3">Đà Nẵng</option>
-  </select>
+  <div class="row justify-content-center">
+    <select class="custom-select col-md-3 mx-3" id="city" name="city">
+      <option value="0">Chọn tỉnh/thành phố</option>
+      <option value="1">Hà Nội</option>
+      <option value="2">tp.Hồ Chí Minh</option>
+      <option value="3">Đà Nẵng</option>
+    </select>
 
-  <select class="custom-select col-md-3 mx-3" id="section" name="section">
-    <option value="0">Chọn lĩnh vực</option>
-    <option value="1">Tiếng Anh</option>
-    <option value="2">Tiếng Nhật</option>
-    <option value="3">Tiếng Pháp</option>
-    <option value="4">Lập trình</option>
-  </select>
+    <select class="custom-select col-md-3 mx-3" id="section" name="section">
+      <option value="0">Chọn lĩnh vực</option>
+      <option value="1">Tiếng Anh</option>
+      <option value="2">Tiếng Nhật</option>
+      <option value="3">Tiếng Pháp</option>
+      <option value="4">Lập trình</option>
+    </select>
 
-  <button class="btn btn-secodary" type="submit" name="button">Lọc</button>
+    <button class="btn btn-secodary" type="submit" name="button">Lọc</button>
+  </div>
 
 </div>
