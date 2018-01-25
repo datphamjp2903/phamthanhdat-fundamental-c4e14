@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    {% include 'meta-data.html' %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills">
+            <li role="presentation" >
+              <a href="{{ url_for('home') }}">Home</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="jumbotron" >
+        <h1 class="">Login</h1>
+        <form class="form-signin" action="" method="post">
+        <label for="">username</label>
+        <input type="name" name="username" value="{{request.form.username }}" id="inputName" class="form-control" placeholder="Username" required autofocus>
+        <label for="">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit" value="login">Login</button>
+      </form>
+      </div>
+    </div>
+  </body>
+</html>

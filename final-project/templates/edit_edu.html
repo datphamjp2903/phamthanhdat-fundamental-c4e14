@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    {% include 'meta-data.html' %}
     <title>Edit center</title>
   </head>
   <body>
@@ -58,6 +59,12 @@
 
       <label for="">Fee</label>
       <input type="number" name="fee" value="{{ edu.fee }}">
+
+      <br>
+
+      <label for="">Hot</label>
+      <input type="radio" name="hot" value="1" {% if edu.hot == 1 %} checked {% endif %}>True
+      <input type="radio" name="hot" value="0" {% if edu.hot == 0 %} checked {% endif %}>False
 
       <br>
 

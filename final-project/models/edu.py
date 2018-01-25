@@ -17,3 +17,4 @@ class Edu(Document):
     info = StringField()
     email = StringField()
     website = StringField()
+    hot = BooleanField()

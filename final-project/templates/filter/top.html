@@ -2,14 +2,11 @@
   <div class="container my-5" id="top-center">
     <h1 class="text-center">CÁC TRUNG TÂM NỔI BẬT</h1>
     <div class="row justify-content-around my-5">
-      <a class="logo-border" href="{{ url_for('center', edu_id = '1') }}"><img src="../../static/images/topica.jpg" alt="" width="200" height="200"></a>
-      <a class="logo-border" href="{{ url_for('center', edu_id = '1') }}"><img src="../../static/images/apollo.jpg" alt="" width="200" height="200"></a>
-      <a class="logo-border" href="{{ url_for('center', edu_id = '1') }}"><img src="../../static/images/res.jpg" alt="" width="200" height="200"></a>
-    </div>
-    <div class="row justify-content-around my-5">
-      <a class="logo-border" href="{{ url_for('center', edu_id = '1') }}"><img src="../../static/images/ila.jpg" alt="" width="200" height="200"></a>
-      <a class="logo-border" href="{{ url_for('center', edu_id = '1') }}"><img src="../../static/images/apax.jpg" alt="" width="200" height="200"></a>
-      <a class="logo-border" href="{{ url_for('center', edu_id = '1') }}"><img src="../../static/images/techkids.jpg" alt="" width="200" height="200"></a>
+      {% for edu in edus %}
+        {% if edu.hot == True %}
+          <a class="logo-border" href="{{ url_for('center', edu_id = edu.id) }}"><img class="object-fit-cover" src="{{ edu.logo }}" alt="" width="200" height="200"></a>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>

@@ -2,18 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
+    {% include 'meta-data.html' %}
     <title>Admin</title>
   </head>
   <body>
     <h1>Admin</h1>
     <a href="{{ url_for('new_edu')}}">Add new</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
     <table border="1px">
       <thead>
         <th>Tên trung tâm</th>
+        <th>Search Name</th>
         <th>Thể loại</th>
         <th>Thành phố</th>
         <th>Quận</th>
         <th>Giá</th>
+        <th>Hot</th>
         <th>Action</th>
       </thead>
 
@@ -21,6 +25,7 @@
         {% for edu in edus %}
         <tr>
           <td>{{edu.name}}</td>
+          <td>{{edu.search_name}}</td>
           <td>
             {% if edu.section==1 %}
               Anh
@@ -43,6 +48,7 @@
           </td>
           <td>{{edu.district}}</td>
           <td>{{edu.fee}}</td>
+          <td>{{edu.hot}}</td>
           <td>
             <a href="{{ url_for('edit_edu', edu_id = edu.id) }}">Edit</a>
             <a href="{{ url_for('delete', edu_id = edu.id) }}">Delete</a>
